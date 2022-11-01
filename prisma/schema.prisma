@@ -13,5 +13,18 @@ datasource db {
 model User {
   id Int @id @default(autoincrement())
   name String
+  email String
+  password String
+  username String
+}
 
+model containt {
+    id String @id
+    title String
+    description String
+    link String
+    priority String
+    timeToFinish Int
+    status String
+    createdAt DateTime
 }
