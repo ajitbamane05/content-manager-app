@@ -3,6 +3,7 @@ import Subscribe from "components/Subscribe";
 import SmallNewsletter from "components/SmallNewsletter";
 import Layout from "components/Layout";
 import { useSession, signIn, signOut } from "next-auth/react"
+
 // import data from 'pages/api/data.json'
 export default function Home({resources}) {
   const { data :session } = useSession()
@@ -29,9 +30,12 @@ export default function Home({resources}) {
 }
 
 export async function getServerSideProps(){
+   
   const resData = await fetch('http://localhost:3000/api/resources');
   const data = await resData.json()
   console.log("calling getServerSideProps.....")
+
+
 
   return{
     props:{
